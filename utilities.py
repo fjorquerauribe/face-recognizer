@@ -15,7 +15,7 @@ def plt_show(image, title=""):
 
 def draw_rectangle_with_text(frame, top_left, bottom_right, message=""):
 	cv2.rectangle(frame, (top_left[0], top_left[1]), (bottom_right[0], bottom_right[1]), (150,150,0), 8)
-	cv2.putText(frame, message, (top_left[0]-10,top_left[1]-10), cv2.FONT_HERSHEY_SIMPLEX, .7, (150,150,0), 2)
+	cv2.putText(frame, message, (top_left[0]-10,top_left[1]-10), cv2.FONT_HERSHEY_SIMPLEX, .7, (150,0,150), 2)
 
 def cut_faces(frame, faces_coord):
 	faces = []

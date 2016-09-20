@@ -1,1 +1,2 @@
-# face_detection
+# face-recognizer
+OpenCV is required

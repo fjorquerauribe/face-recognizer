@@ -30,16 +30,6 @@ while True:
 				( faces_coord[i][0]+faces_coord[i][2], faces_coord[i][1]+faces_coord[i][3] ), pred)
 		cv2.imshow('Tutorial', frame)
 
-	'''
-	for(x, y, w, h) in faces_coord:
-		ut.draw_rectangle_with_text(frame, (x,y), (x+w,y+h))
-
-	#faces = ut.normalize_faces(frame, faces_coord)
-	
-	#cv2.imshow("Tutorial", faces[0])
-	
-	cv2.imshow("Tutorial", frame)
-	'''
 	# si se presiona ESC
 	if cv2.waitKey(20) & 0xFF==27:
 		break
