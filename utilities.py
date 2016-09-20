@@ -78,7 +78,7 @@ def collect_faces():
 	faces = []
 	labels = []
 	labels_dic = {}
-	names = [name for name in os.listdir('pictures/')]
+	names = [name for name in os.listdir('pictures/') if not name.startswith('.')]
 	for i, name in enumerate(names):
 		labels_dic[i] = name
 		for face in os.listdir('pictures/' + name):
