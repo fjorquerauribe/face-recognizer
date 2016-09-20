@@ -3,18 +3,23 @@ import cv2.face
 import utilities as ut
 import video_camera
 import detector
+import recognizer
 import numpy as np
 
 cv2.startWindowThread()
 cv2.namedWindow("Tutorial", cv2.WINDOW_NORMAL)
 webcam = video_camera.VideoCamera()
-detector = detector.FaceDetector("classifiers/haarcascades/haarcascade_frontalface_default.xml")
+my_detector = detector.FaceDetector("classifiers/haarcascades/haarcascade_frontalface_default.xml")
+my_recognizer = recognizer.FaceRecognizer('eigenface')
 
+faces, labels, labels_dic = ut.collect_faces()
+
+my_recognizer.train(faces, labels)
 #ut.take_pictures()
 
 while True:
 	frame = webcam.get_frame()
-	faces_coord = detector.detect(frame)
+	faces_coord = my_detector.detect(frame)
 	
 	for(x, y, w, h) in faces_coord:
 		ut.draw_rectangle_with_text(frame, (x,y), (x+w,y+h))

@@ -1,6 +1,6 @@
 import cv2
 import matplotlib.pyplot as plt
-import numpy
+import numpy as np
 import os
 import video_camera
 import detector
@@ -72,7 +72,7 @@ def take_pictures():
 			timer += 50
 		cv2.destroyAllWindows()
 	else:
-		print 'This name already has been used'
+		print 'This name already has been used.'
 
 def collect_faces():
 	faces = []
