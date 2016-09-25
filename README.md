@@ -1,2 +1,2 @@
 # face-recognizer
-OpenCV is required
+Python 2.7 and OpenCV 3.1 is required
