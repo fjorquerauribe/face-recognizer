@@ -9,6 +9,10 @@ import numpy as np
 cv2.startWindowThread()
 cv2.namedWindow("Tutorial", cv2.WINDOW_NORMAL)
 webcam = video_camera.VideoCamera()
+
+#webcam.set(cv.CV_CAP_PROP_FRAME_WIDTH, int(800))
+#webcam.set(cv.CV_CAP_PROP_FRAME_HEIGHT, int(600))
+
 my_detector = detector.FaceDetector("classifiers/haarcascades/haarcascade_frontalface_default.xml")
 my_recognizer = recognizer.FaceRecognizer('eigenface')
 
@@ -19,7 +23,7 @@ my_recognizer.train(faces, labels)
 
 while True:
 	frame = webcam.get_frame()
-	faces_coord = my_detector.detect(frame, min_neighbors=10)
+	faces_coord = my_detector.detect(frame, min_neighbors=5)
 	
 	if len(faces_coord):
 		faces = ut.normalize_faces(frame, faces_coord)
